@@ -6,7 +6,7 @@ phases:
     commands:
       - echo "Building"
       - mvn clean compile package
-  pos_build:
+  post_build:
     commands:
       - echo "Pos Building"
       - mv target/*.war ./ROOT.war
