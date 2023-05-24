@@ -1,11 +1,12 @@
 package br.com.fiap.abctechapi.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,14 +21,17 @@ public class Order {
 
     @Column(name = "operator_id", nullable = false)
     private Long operatorId;
+
     @ManyToMany
-    private List<Assistance> assistanceList;
+    private List<Assistance> assists;
+
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "start order location id", foreignKey = @ForeignKey(name = "FK_start_order_id"))
+    @JoinColumn(name = "start_order_location_id", foreignKey = @ForeignKey(name = "FK_start_order_id"))
     private OrderLocation startOrderLocation;
+
+
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "end order location id", foreignKey = @ForeignKey(name = "FK_end_order_id"))
+    @JoinColumn(name = "end_order_location_id", foreignKey = @ForeignKey(name = "FK_end_order_id"))
     private OrderLocation endOrderLocation;
 
-    }
-
+}

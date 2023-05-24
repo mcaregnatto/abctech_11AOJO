@@ -11,7 +11,9 @@ import java.util.stream.Collectors;
 
 @Component
 public class AssistanceApplicationImpl implements AssistanceApplication {
+
     private final AssistanceService assistanceService;
+
     @Autowired
     public AssistanceApplicationImpl(AssistanceService assistanceService) {
         this.assistanceService = assistanceService;
@@ -19,10 +21,10 @@ public class AssistanceApplicationImpl implements AssistanceApplication {
 
     @Override
     public List<AssistResponseDto> getAssists() {
-        List<AssistResponseDto> assistResponseDtos = this.assistanceService.getAssists()
+        List<AssistResponseDto> assistDtos = this.assistanceService.getAssists()
                 .stream()
                 .map(o -> new AssistResponseDto(o.getId(), o.getName(), o.getDescription()))
-        .collect(Collectors.toList());
-        return assistResponseDtos;
+                .collect(Collectors.toList());
+        return assistDtos;
     }
 }

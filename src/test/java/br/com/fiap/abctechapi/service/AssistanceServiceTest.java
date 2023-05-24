@@ -10,13 +10,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.util.Assert;
 
 import java.util.List;
 
 @SpringBootTest
 public class AssistanceServiceTest {
-
 
     private AssistanceService assistanceService;
     @MockBean
@@ -26,8 +24,8 @@ public class AssistanceServiceTest {
     public void init(){
         MockitoAnnotations.openMocks(this);
         assistanceService = new AssistanceServiceImpl(assistanceRepository);
-
     }
+
     @Test
     public void test_list_assistance(){
         Mockito.when(assistanceRepository.findAll())
@@ -36,7 +34,6 @@ public class AssistanceServiceTest {
         List<Assistance> list = assistanceService.getAssists();
         Assertions.assertNotNull(list);
         Assertions.assertEquals(list.size(), 1);
-
-
     }
+
 }

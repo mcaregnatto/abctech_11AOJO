@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class OrderDto {
+
     @NotNull
     private Long operatorId;
     @NotEmpty

@@ -6,21 +6,25 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderLocation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "latitude")
     private Double latitude;
+
     @Column(name = "longitude")
     private Double longitude;
+
     @Column(name = "date")
-    private Date date;
+    private Timestamp date;
 
-    }
-
+}
