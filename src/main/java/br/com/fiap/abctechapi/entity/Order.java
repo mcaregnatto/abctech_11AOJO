@@ -34,4 +34,6 @@ public class Order {
     @JoinColumn(name = "end_order_location_id", foreignKey = @ForeignKey(name = "FK_end_order_id"))
     private OrderLocation endOrderLocation;
 
+    public void setAssistances(List<Assistance> assistance) {
+    }
 }

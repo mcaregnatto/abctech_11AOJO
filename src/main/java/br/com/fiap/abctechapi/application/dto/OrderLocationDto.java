@@ -19,4 +19,8 @@ public class OrderLocationDto {
     @PastOrPresent
     @JsonProperty("dateTime")
     private Date date;
+
+
+    public OrderLocationDto(String ruaA, String number, String sãoPaulo, String sp, String brasil) {
+    }
 }
